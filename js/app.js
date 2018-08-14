@@ -127,10 +127,6 @@ function checkWin() {
   }
 }
 
-//function 5
-// Create hint
-function createHint() {}
-
 // Start button for the game.
 resetButton.addEventListener("click", (event) => {
   overlay.style.display = "none";
