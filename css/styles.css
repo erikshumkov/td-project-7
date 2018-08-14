@@ -1,6 +1,11 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+@import url('https://fonts.googleapis.com/css?family=Jua');
+
+
 /* Variables */
 
 :root {
@@ -27,6 +32,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: #000;
 }
 
 li, ol, ul {
@@ -37,14 +43,17 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Alfa Slab One', cursive;
   font-size: var(--font-size-large);
+  text-shadow: 0px 5px 4px #fff;
+  letter-spacing: 3px;
   margin: 0;
 }
 
 button {
   margin: 6px;
   border: 1px solid transparent;
+  border-bottom: 2px solid #a3a3a3;
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
@@ -69,6 +78,16 @@ button {
   padding: 10px;
 }
 
+/*--- get rid of LI text select ---*/
+#phrase li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* Title */
 
 .header {
@@ -78,7 +97,12 @@ button {
 /* Scoreboard */
 
 .tries {
-  background-image: url('../images/liveHeart.png');
+  /*background-image: url('../images/liveHeart.png'); - original css
+  didnt work well displaying the images. */
+}
+
+.tries img {
+  width: 45px;
 }
 
 /* Phrase */
@@ -95,12 +119,19 @@ button {
 }
 
 .space {
-  width: 15px;
+  width: 35px;
 }
 
 .show {
-  color: #000;
-  background-color: #76CE82;
+  font-family: 'Jua', sans-serif;
+  color: #fff;
+  background-color: #bb4665;
+  border-bottom: 4px solid #89334a;
+}
+
+.animation {
+  transition: transform 1s cubic-bezier(.7,-0.39,.31,1.38);
+  transform: rotate(360deg);
 }
 
 /* Keyboard */
@@ -111,8 +142,18 @@ button {
 }
 
 .chosen {
-  background: var(--color-neutral);
+  background: #bb4665;
   border-radius: 5px;
+  border-bottom: 2px solid #742c3f;
+  font-size: var(--font-size-medium);
+  color: #FFFFFF;
+}
+
+.wrongchoice {
+  background: #000;
+  border-radius: 5px;
+  border-bottom: 2px solid #000;
+  border: 1px solid #858585;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
@@ -122,7 +163,27 @@ button {
   margin: 50px auto;
   background: #FFFFFF;
   border-radius: 5px;
+  border-bottom: 3px solid #c5c5c5;
   font-size: var(--font-size-medium);
+}
+.btn__reset:hover {
+  cursor: pointer;
+}
+
+.span__text {
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
+  margin: 20px auto;
+}
+
+.btn__retry {
+  padding: 8px;
+  margin: 20px auto;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  font-family: 'Jua', sans-serif;
+  cursor: pointer;
 }
 
 /* Overlay */
@@ -141,7 +202,7 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #5f5f5f;
 }
 
 .start {
