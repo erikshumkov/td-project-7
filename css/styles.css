@@ -28,7 +28,7 @@
 }
 
 body {
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
   display: flex;
   height: 100vh;
